@@ -1,25 +1,30 @@
 # DistributedWeatherStation
+![Station Image](/images/StationImage.jpg)
 
 ## Project Description
 
-This project is a weather station built with an MSP432 microcontroller and an ESP32 module for communication with a web server. The weather station is capable of detecting various environmental parameters and sending them to the web server for data processing and display.
+This project is a distributed weather station built using three ESP32 boards equipped with various sensors to measure environmental temperature, humidity, pressure, and light intensity. The collected data is sent every hour to a Node.js web server hosted on a Raspberry Pi and displayed across web pages.
 
 ## Features
-
-- Detection of temperature, humidity, atmospheric pressure, and ambient brightness.
+- **Distributed Sensing**: Utilizes three ESP32 boards for distributed data collection.
+- **Multi-Sensor Support**: Each ESP32 board is equipped with sensors for measuring temperature, humidity, pressure, and ambient light.
+- **Real-Time Data**: Data is sent every hour to a Node.js web server.
+- **Web Interface**: Real-time data and daily trends can be viewed through the web interface.
 - Wireless communication with the web server via ESP32.
 - Low power consumption.
 
 ## Required Hardware
 
-- MSP432 Microcontroller
 - ESP32 Module
-- Weather sensors (temperature, humidity, atmospheric pressure, light sensor)
+- DHT11 (temperature and humidity)
+- BMP180 (pressure and calculated altitude)
+- BH1750 (light intensity)
 
 ## Required Software
 
-- Code Composer Studio for MSP432 programming
-- ESP32 library for WiFi communication with Arduino IDE
+- ESP32 library for WiFi communication with Arduino IDE, add this link to board manager in arduino ide https://espressif.github.io/arduino-esp32/package_esp32_index.json
+- DHT sensor library (for DHT11 temperature and humidity sensor) found inside arduino ide.
+- BMP180 library (for pressure and altitude) link from manufacturer az-delivery.de https://cdn.shopify.com/s/files/1/1509/1638/files/BMP180_Arduino.zip?14280905350788070314
 
 ## Installation
 
