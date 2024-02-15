@@ -77,6 +77,8 @@ This project is easily scalable, in the future we can add:
 
 In addition, we can implement the storage of the data using a database. In this way we can build graphic with a larger number of data instead of the last 24 hours only.
 
+## Source code organization
+
 
 ## Pinout
 
