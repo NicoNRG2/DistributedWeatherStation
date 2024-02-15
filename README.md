@@ -55,6 +55,59 @@ npm install ws'
 
 5. Add the file from this repository WebServer folder inside a folder named public in your Node.js project.
 
-## Contributing
+## Next Feature
+This project is easily scalable, in the future we can add:
+- sensors: to make measurement of other type of data, such ad the wind sensor, the rain sensor,...
+- station: in order to cover a larger geographic area, we can add new weather station.
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+In addition, we can implement the storage of the data using a database. In this way we can build graphic with a larger number of data instead of the last 24 hours only.
+
+
+## Pinout
+
+<table>
+<tr><th colspan=2> ESP32 </th></tr>
+<tr><th>Pin left </th><th>Pin right</th></tr>
+<tr><td>
+
+| pin  | description
+| --- | --- 
+|EN | 
+|VP  |
+|VN  |
+|34  |
+|35  |
+|32  | 
+|33  |
+|25  |
+|26  |
+|27 |
+|14  | 
+|12  | 
+|13  | DHT11 data
+|GND  |
+|5V | DHT11
+
+
+</td><td>
+
+| pin  | description
+| --- | --- 
+|23 |
+|SCL| I2C
+|TX|
+|RX |
+|SDA | I2C
+|19 |
+|18 |
+|5 |
+|17| 
+|16 |
+|4 |
+|2| 
+|15 |
+|GND | GROUND
+|3.3V| BH1750, BMP180
+
+
+</td></tr> </table>
