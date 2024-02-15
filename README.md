@@ -146,4 +146,11 @@ In addition, we can implement the storage of the data using a database. In this 
 
 </td></tr> </table>
 
-prova sincro
+## Team members
+
+The project was created by all members of the group together, each member contributed on all parts of the project.
+However, we can highlight the areas of greatest competence for each member:
+
+- Brognara Alessandro (sensor testing with arduino IDE)
+- Cappellaro Nicola (interconnection between ESP32 and Raspberry, ESP32 coding)
+- Zannoni Riccardo (website and javascript coding)
