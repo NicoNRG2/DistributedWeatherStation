@@ -4,8 +4,8 @@
 - [Project Description](#Project-Description)
 - [Features](#Features)
 - [Requirements](#Requirements)
-- [Required Hardware](#Required-Hardware)
-- [Required Software](#Required-Software)
+    - [Required Hardware](#Required-Hardware)
+    - [Required Software](#Required-Software)
 
 ## Project Description
 
