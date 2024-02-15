@@ -33,8 +33,12 @@ This project is a distributed weather station built using three ESP32 boards equ
 3. Configure the WiFi settings in the source code.
 4. Start the weather station and verify that the data is correctly sent to the web server.
 
-## Contributing
-Ciao mondo!
+## Next Feature
+This project is easily scalable, in the future we can add:
+- sensors: to make measurement of other type of data, such ad the wind sensor, the rain sensor,...
+- station: in order to cover a larger geographic area, we can add new weather station.
+
+In addition, we can implement the storage of the data using a database. In this way we can build graphic with a larger number of data instead of the last 24 hours only.
 
 
 ## Pinout
