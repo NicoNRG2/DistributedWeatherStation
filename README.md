@@ -126,3 +126,5 @@ In addition, we can implement the storage of the data using a database. In this 
 
 
 </td></tr> </table>
+
+prova sincro
