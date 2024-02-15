@@ -76,6 +76,10 @@ npm install ws
 node webserver.js
 ```
 
+## User Guide
+
+finire di aggiungere come usare il sito........
+
 ## Next Feature
 This project is easily scalable, in the future we can add:
 - sensors: to make measurement of other type of data, such ad the wind sensor, the rain sensor,...
