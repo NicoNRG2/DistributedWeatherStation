@@ -46,46 +46,43 @@ Ciao mondo!
 
 | pin  | description
 | --- | --- 
-|GND | 
-|5V  |
-|Vext  |
-|Vext  |
-|Rx  |
-|Tx  | 
-|Rst  |
-|0  |LedKitchen
-|22  |SCL
-|19 |ButTMinus
-|23  | Wifi Module RX
-|18  | 
-|5  |ButGate
-|15  |
-|2 |SensProximity
-|4    | SensProximity
-|17  | Wifi Module TX
-|16 |ServoMot
+|EN | 
+|VP  |
+|VN  |
+|34  |
+|35  |
+|32  | 
+|33  |
+|25  |
+|26  |
+|27 |
+|14  | 
+|12  | 
+|13  |---
+|GND  |
+|VIN |---
+
 
 </td><td>
 
 | pin  | description
 | --- | --- 
-|GND |
-|3V3|
-|3V3|
-|36 |
-|37 |ButTMode
-|38 |ButTOn/Off
-|39 |
-|34 |ButTPlus
-|35 |ButOutdoor	
-|32| ButStudio
-|33 |ButBedroom
-|25 |ButBathroom
-|26| ButKitchen
-|27 |LedOutdoor
-|14 |LedStudio
-|12| LedBedroom
-|13 |LedBathroom
-|21 |SDA
+|23 |
+|SCL| ---
+|TX|
+|RX |
+|SDA | ---
+|38 |
+|19 |
+|18 |
+|5 |
+|17| 
+|16 |
+|4 |
+|2| 
+|15 |
+|GND | ---
+|3.3| ---
+
 
 </td></tr> </table>
