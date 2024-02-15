@@ -36,7 +36,7 @@ This project is a distributed weather station built using three ESP32 boards equ
 ## Next Feature
 This project is easily scalable, in the future we can add:
 - sensors: to make measurement of other type of data, such ad the wind sensor, the rain sensor,...
-- station: in order to cover a larger geographic area, we can add new weather station.
+- stations: in order to cover a larger geographic area, we can add new weather stations.
 
 In addition, we can implement the storage of the data using a database. In this way we can build graphic with a larger number of data instead of the last 24 hours only.
 
