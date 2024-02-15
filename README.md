@@ -19,6 +19,7 @@ This project is a distributed weather station built using three ESP32 boards equ
 - DHT11 (temperature and humidity)
 - BMP180 (pressure and calculated altitude)
 - BH1750 (light intensity)
+- Raspberry Pi
 
 ## Required Software
 
@@ -38,20 +39,24 @@ This project is a distributed weather station built using three ESP32 boards equ
 ### Raspberry Server
 1. Let's start with a basic installation of Raspbarry with Ubuntu (which we don't cover in this guide, you can easily do it on the web)
 2. Install Node.js on the Raspberry
-'
+'''
 sudo apt update
 curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
-'
+'''
 
 3. Create a folder for the website, move inside and init the project
-'cd mio-progetto-nodejs
-npm init'
+'''
+cd mio-progetto-nodejs
+npm init
+'''
 
 4. Install the necessary packages:
-'npm install express
+'''
+npm install express
 npm install body-parser
-npm install ws'
+npm install ws
+'''
 
 5. Add the file from this repository WebServer folder inside a folder named public in your Node.js project.
 
