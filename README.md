@@ -58,9 +58,9 @@ Ciao mondo!
 |27 |
 |14  | 
 |12  | 
-|13  |---
+|13  | DHT11 data
 |GND  |
-|VIN |---
+|5V | DHT11
 
 
 </td><td>
@@ -68,10 +68,10 @@ Ciao mondo!
 | pin  | description
 | --- | --- 
 |23 |
-|SCL| ---
+|SCL| I2C
 |TX|
 |RX |
-|SDA | ---
+|SDA | I2C
 |19 |
 |18 |
 |5 |
@@ -80,8 +80,8 @@ Ciao mondo!
 |4 |
 |2| 
 |15 |
-|GND | ---
-|3.3| ---
+|GND | GROUND
+|3.3V| BH1750, BMP180
 
 
 </td></tr> </table>
