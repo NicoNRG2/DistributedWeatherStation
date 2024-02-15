@@ -6,6 +6,13 @@
 - [Requirements](#Requirements)
     - [Required Hardware](#Required-Hardware)
     - [Required Software](#Required-Software)
+- [Installation](#Installation)
+    - [ESP32 Station](#ESP32-Station)
+    - [Raspberry Server](#Raspberry-Server)
+- [Next Feature](#Next-Feature)
+- [Pinout](#Pinout)
+
+
 
 ## Project Description
 
