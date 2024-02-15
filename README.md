@@ -64,6 +64,12 @@ npm install ws
 
 5. Add the file from this repository WebServer folder inside a folder named public in your Node.js project.
 
+6. run the web server
+
+```
+node webserver.js
+```
+
 ## Next Feature
 This project is easily scalable, in the future we can add:
 - sensors: to make measurement of other type of data, such ad the wind sensor, the rain sensor,...
