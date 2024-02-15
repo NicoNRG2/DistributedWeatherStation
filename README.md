@@ -1,9 +1,11 @@
 # DistributedWeatherStation
 ![Station Image](/images/StationImage.jpg)
 ## Section links
-- [ProjectDescription](#Project Description)
+- [Project Description](#Project-Description)
 - [Features](#Features)
-
+- [Requirements](#Requirements)
+- [Required Hardware](#Required-Hardware)
+- [Required Software](#Required-Software)
 
 ## Project Description
 
@@ -16,8 +18,8 @@ This project is a distributed weather station built using three ESP32 boards equ
 - **Web Interface**: Real-time data and daily trends can be viewed through the web interface.
 - **Wireless communication**: with the web server via ESP32.
 - **Low power consumption**.
-
-## Required Hardware
+## Requirements
+### Required Hardware
 
 - ESP32 Module
 - DHT11 (temperature and humidity)
@@ -25,7 +27,7 @@ This project is a distributed weather station built using three ESP32 boards equ
 - BH1750 (light intensity)
 - Raspberry Pi
 
-## Required Software
+### Required Software
 
 - ESP32 library for WiFi communication with Arduino IDE, add this link to board manager in arduino ide https://espressif.github.io/arduino-esp32/package_esp32_index.json
 - DHT sensor library (for DHT11 temperature and humidity sensor) found inside arduino ide.
