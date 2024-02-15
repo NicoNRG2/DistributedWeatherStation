@@ -124,5 +124,5 @@ In addition, we can implement the storage of the data using a database. In this 
 |GND | GROUND
 |3.3V| BH1750, BMP180
 
-Ciao
+
 </td></tr> </table>
