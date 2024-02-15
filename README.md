@@ -1,5 +1,9 @@
 # DistributedWeatherStation
 ![Station Image](/images/StationImage.jpg)
+## Section links
+- [Project Description](#Project Description)
+- [Features](#Features)
+
 
 ## Project Description
 
