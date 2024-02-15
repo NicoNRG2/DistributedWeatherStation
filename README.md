@@ -35,3 +35,57 @@ This project is a distributed weather station built using three ESP32 boards equ
 
 ## Contributing
 Ciao mondo!
+
+
+## Pinout
+
+<table>
+<tr><th colspan=2> ESP32 </th></tr>
+<tr><th>Pin left </th><th>Pin right</th></tr>
+<tr><td>
+
+| pin  | description
+| --- | --- 
+|GND | 
+|5V  |
+|Vext  |
+|Vext  |
+|Rx  |
+|Tx  | 
+|Rst  |
+|0  |LedKitchen
+|22  |SCL
+|19 |ButTMinus
+|23  | Wifi Module RX
+|18  | 
+|5  |ButGate
+|15  |
+|2 |SensProximity
+|4    | SensProximity
+|17  | Wifi Module TX
+|16 |ServoMot
+
+</td><td>
+
+| pin  | description
+| --- | --- 
+|GND |
+|3V3|
+|3V3|
+|36 |
+|37 |ButTMode
+|38 |ButTOn/Off
+|39 |
+|34 |ButTPlus
+|35 |ButOutdoor	
+|32| ButStudio
+|33 |ButBedroom
+|25 |ButBathroom
+|26| ButKitchen
+|27 |LedOutdoor
+|14 |LedStudio
+|12| LedBedroom
+|13 |LedBathroom
+|21 |SDA
+
+</td></tr> </table>
