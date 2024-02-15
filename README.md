@@ -34,5 +34,4 @@ This project is a distributed weather station built using three ESP32 boards equ
 4. Start the weather station and verify that the data is correctly sent to the web server.
 
 ## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Ciao mondo!
