@@ -48,11 +48,17 @@ sudo apt-get install -y nodejs
 
 3. Create a folder for the website, move inside it and init the project:
 
-'''
+```bash
 mkdir mio-progetto-nodejs
 cd mio-progetto-nodejs
 npm init
-'''
+```
+
+```
+mkdir mio-progetto-nodejs
+cd mio-progetto-nodejs
+npm init
+```
 
 4. Install the necessary packages:
 
