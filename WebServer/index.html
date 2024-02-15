@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mappa con Luoghi Cliccabili</title>
+
+    <!-- Includi la libreria Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <style>
+        /* Stile per il contenitore della mappa */
+        #mappa {
+            height: 400px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenitore per la mappa -->
+    <div id="mappa"></div>
+
+    <!-- Codice JavaScript per la mappa -->
+    <script>
+        // Inizializza la mappa centrata sul Veneto
+        var map = L.map('mappa').setView([45.6797, 11.8668], 9);
+
+        // Aggiungi uno stile di mappa base
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Aggiungi marcatori per Marostica ed Enego
+        var marosticaMarker = L.marker([45.7443, 11.6452]).addTo(map);
+        var enegoMarker = L.marker([45.9532, 11.6417]).addTo(map);
+
+        // Aggiungi pop-up con link alle pagine specifiche
+        marosticaMarker.bindPopup('<a href="pagina_marostica.html">Marostica</a>');
+        enegoMarker.bindPopup('<a href="pagina_enego.html">Enego</a>');
+    </script>
+
+</body>
+</html>
