@@ -12,7 +12,6 @@
 - [Next Feature](#Next-Feature)
 - [Pinout](#Pinout)
 
-## Ciao sono Ale 
 
 ## Project Description
 
