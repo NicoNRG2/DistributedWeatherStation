@@ -84,7 +84,15 @@ node webserver.js
 
 ## User Guide
 
-finire di aggiungere come usare il sito........
+Il sito web è molto basilare e facile da usare, pensato per un'esperiena utente veloce e essenziale.
+Il sito è accessibile al seguente link:
+```
+http://mioserverino.homepc.it:3000
+```
+**"index.html"**
+Apparirà una prima pagina in cui è presente una mappa geografica con le stazioni meteo disponibili.
+**"marostica_station.html"**
+Cliccando su una di queste appariranno i dati meteo di questa località attuali aggiornati nell'ultima ora. Tramite il menù è inoltre possibile spostarsi nella sezione dei grafici che mostrano l'andamento dei dati misurati nelle ultime 24 ore.
 
 ## Next Feature
 This project is easily scalable, in the future we can add:
