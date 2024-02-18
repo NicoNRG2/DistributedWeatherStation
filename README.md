@@ -13,7 +13,6 @@
 - [Pinout](#Pinout)
 
 
-
 ## Project Description
 
 This project is a distributed weather station built using three ESP32 boards equipped with various sensors to measure environmental temperature, humidity, pressure, and light intensity. The collected data is sent every hour to a Node.js web server hosted on a Raspberry Pi and displayed across web pages.
@@ -83,6 +82,10 @@ npm install ws
 node webserver.js
 ```
 
+## User Guide
+
+finire di aggiungere come usare il sito........
+
 ## Next Feature
 This project is easily scalable, in the future we can add:
 - sensors: to make measurement of other type of data, such ad the wind sensor, the rain sensor,...
@@ -142,4 +145,11 @@ In addition, we can implement the storage of the data using a database. In this 
 
 </td></tr> </table>
 
-prova sincro
+## Team members
+
+The project was created by all members of the group together, each member contributed on all parts of the project.
+However, we can highlight the areas of greatest competence for each member:
+
+- Brognara Alessandro (sensor testing with arduino IDE)
+- Cappellaro Nicola (interconnection between ESP32 and Raspberry, ESP32 coding)
+- Zannoni Riccardo (website and javascript coding)

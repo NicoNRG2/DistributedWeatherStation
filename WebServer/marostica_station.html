@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Station Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js">
+    <style>
+        /* Il tuo codice CSS qui */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+       
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        #pageHome,
+        #pageCharts {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        canvas {
+            margin-top: 20px;
+        }
+    </style>
+ 
+</head>
+<body>
+
+<!-- Menu di navigazione -->
+<nav>
+    <ul>
+        <li><a href="http://mioserverino.homepc.it:3000">Torna alla Mappa</a></li>
+        <li><a href="#" onclick="showPage('pageHome')">Home</a></li>
+        <li><a href="#" onclick="showPage('pageCharts')">Grafici</a></li>
+    </ul>
+</nav>
+
+<!-- PAGINA 1: Dati stazione Marostica (Home) -->
+<div id="pageHome">
+    <h2>Stazione Meteorologica di Marostica</h2>
+
+    <p>Temperatura: <span id="temperatura"></span> °C</p>
+    <p>Umidità: <span id="umidita"></span> %</p>
+    <p>Pressione: <span id="pressione"></span> hPa</p>
+    <p>Altitudine: <span id="altezza"></span> m</p>
+    <p>Luminosità: <span id="luce"></span> lx</p>
+</div>
+
+<!-- PAGINA 2: Altra pagina con tutti i grafici -->
+<div id="pageCharts" hidden>
+    <h2>Ultime 24 ore</h2>
+
+    <canvas id="temperaturaChart"></canvas>
+    <canvas id="umiditaChart"></canvas>
+    <canvas id="pressioneChart"></canvas>
+    <canvas id="altezzaChart"></canvas>
+    <canvas id="luceChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var arrayTemperatura = new Array(24).fill(null);
+    var arrayUmidita = new Array(24).fill(null);
+    var arrayPressione = new Array(24).fill(null);
+    var arrayAltezza = new Array(24).fill(null);
+    var arrayLuce = new Array(24).fill(null);
+
+    var createChart = function (ctxId, label, data, color, um) {
+        var ctx = document.getElementById(ctxId).getContext('2d');
+        return new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: Array.from({ length: 24 }, (_, i) => roundToNearestHour(i)).reverse(),
+                datasets: [{
+                    label: label,
+                    data: data,
+                    borderColor: color,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Orario'
+                        }
+                    },
+                    y: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: label + '   [ ' + um + ' ]'
+                        }
+                    }
+                }
+            }
+        });
+    };
+
+    var roundToNearestHour = function (hour) {
+        var oraAttuale = new Date();
+        oraAttuale.setHours(oraAttuale.getHours() - hour);
+        oraAttuale.setMinutes(0);
+        oraAttuale.setSeconds(0);
+        return oraAttuale.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    };
+
+    var socket = new WebSocket('ws://mioserverino.homepc.it:3000');
+
+    socket.onmessage = function (event) {
+        var json = JSON.parse(event.data);
+        if (json.luogo === "Marostica") {
+            arrayTemperatura.shift();
+            arrayUmidita.shift();
+            arrayPressione.shift();
+            arrayAltezza.shift();
+            arrayLuce.shift();
+
+            arrayTemperatura.push(json.temperatura);
+            arrayUmidita.push(json.umidita);
+            arrayPressione.push(json.pressione);
+            arrayAltezza.push(json.altezza);
+            arrayLuce.push(json.luce);
+
+            updateChart(temperaturaChart, arrayTemperatura);
+            updateChart(umiditaChart, arrayUmidita);
+            updateChart(pressioneChart, arrayPressione);
+            updateChart(altezzaChart, arrayAltezza);
+            updateChart(luceChart, arrayLuce);
+
+            document.getElementById("temperatura").innerHTML = json.temperatura;
+            document.getElementById("umidita").innerHTML = json.umidita;
+            document.getElementById("pressione").innerHTML = json.pressione;
+            document.getElementById("altezza").innerHTML = json.altezza;
+            document.getElementById("luce").innerHTML = json.luce;
+        }
+    };
+
+    var updateChart = function (chart, data) {
+        chart.data.datasets[0].data = data;
+        chart.update();
+    };
+
+    var temperaturaChart = createChart('temperaturaChart', 'Temperatura', arrayTemperatura, 'red', '°C');
+    var umiditaChart = createChart('umiditaChart', 'Umidità', arrayUmidita, 'blue', '%');
+    var pressioneChart = createChart('pressioneChart', 'Pressione', arrayPressione, 'green', 'hPa');
+    var altezzaChart = createChart('altezzaChart', 'Altezza', arrayAltezza, 'purple', 'm');
+    var luceChart = createChart('luceChart', 'Luce', arrayLuce, 'orange', 'lx');
+
+    // Funzione per passare alla pagina desiderata
+    function showPage(pageId) {
+        document.getElementById('pageHome').hidden = true;
+        document.getElementById('pageCharts').hidden = true;
+
+        // Mostra la pagina corrispondente
+        document.getElementById(pageId).hidden = false;
+    }
+
+    // Esempio di come chiamare la funzione per mostrare la home al caricamento della pagina
+    showPage('pageHome');
+</script>
+
+</body>
+</html>
