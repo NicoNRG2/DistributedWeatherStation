@@ -13,7 +13,11 @@
     - [Raspberry Server](#Raspberry-Server)
 - [Next Feature](#Next-Feature)
 
+## Presentation link
+https://docs.google.com/presentation/d/16gfYpvotDNyVWPRAXfWDlK4m0twHXV2He22jJudYA-Q/edit?usp=sharing
 
+## Video link
+... dajeeee ...
 
 ## Project Description
 
