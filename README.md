@@ -1,5 +1,5 @@
 # DistributedWeatherStation
-![Station Image](/images/StationImage.jpg)
+![Station Image](/images/StationImage.jpg) | ![Station Image](/images/screenSito.png)
 ## Section links
 - [Project Description](#Project-Description)
 - [Features](#Features)
