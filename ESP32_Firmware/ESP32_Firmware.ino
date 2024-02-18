@@ -6,6 +6,7 @@
 #include <HTTPClient.h>
 #include <Ticker.h>
 
+// important edit ssid and password to be able to connect to the internet
 const char* ssid = "your_ssid";
 const char* password =  "your_password";
 
@@ -175,7 +176,7 @@ void sendData() {
     http.addHeader("Content-Type", "application/json");  //Specify content-type header
 
     // location of the weather station
-    String location = "Enego";
+    String location = "Enego";    // important edit the location of the station for correct display on the website
 
     // Create JSON data
     String jsonData = "{";
