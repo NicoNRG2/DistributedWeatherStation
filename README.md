@@ -32,7 +32,7 @@ This project is a distributed weather station built using three ESP32 boards equ
 - DHT11 (temperature and humidity)
 - BMP180 (pressure and calculated altitude)
 - BH1750 (light intensity)
-- Raspberry Pi
+- Raspberry Pi 
 
 ### Required Software
 
