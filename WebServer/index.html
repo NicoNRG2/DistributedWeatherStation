@@ -3,21 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mappa con Luoghi Cliccabili</title>
+    <title>Distributed Weather Station</title>
 
     <!-- Includi la libreria Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #mappa {
+            height: 500px;
+            width: 75%;
+            margin: auto;
+            
+        }
+
+        /* Stile per il titolo della pagina */
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #3498db;
+            color: #fff;
+            margin: 0;
+        }
+
         /* Stile per il contenitore della mappa */
         #mappa {
-            height: 400px;
-            width: 400px;
+            margin: auto;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
+
+    <!-- Titolo della pagina -->
+    <h1>Stazioni Meteo Disponibili: </h1>
 
     <!-- Contenitore per la mappa -->
     <div id="mappa"></div>
@@ -37,8 +64,8 @@
         var enegoMarker = L.marker([45.9532, 11.6417]).addTo(map);
 
         // Aggiungi pop-up con link alle pagine specifiche
-        marosticaMarker.bindPopup('<a href="pagina_marostica.html">Marostica</a>');
-        enegoMarker.bindPopup('<a href="pagina_enego.html">Enego</a>');
+        marosticaMarker.bindPopup('<a href="marostica_station.html">Marostica</a>');
+        enegoMarker.bindPopup('<a href="enego_station.html">Enego</a>');
     </script>
 
 </body>
