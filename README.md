@@ -6,11 +6,13 @@
 - [Requirements](#Requirements)
     - [Required Hardware](#Required-Hardware)
     - [Required Software](#Required-Software)
+    
 - [Installation](#Installation)
     - [ESP32 Station](#ESP32-Station)
+    - [Pinout](#Pinout)
     - [Raspberry Server](#Raspberry-Server)
 - [Next Feature](#Next-Feature)
-- [Pinout](#Pinout)
+
 
 
 ## Project Description
@@ -47,6 +49,55 @@ This project is a distributed weather station built using three ESP32 boards equ
 2. Upload the source code to the ESP32 using the Arduino IDE.
 3. Configure the WiFi settings in the source code and change if needed the address of the web server.
 4. Start the weather station and verify that the data is correctly sent to the web server with the serial monitor inside Arduino IDE.
+
+### Pinout
+
+<table>
+<tr><th colspan=2> ESP32 </th></tr>
+<tr><th>Pin left </th><th>Pin right</th></tr>
+<tr><td>
+
+| pin  | description
+| --- | --- 
+|EN | 
+|VP  |
+|VN  |
+|34  |
+|35  |
+|32  | 
+|33  |
+|25  |
+|26  |
+|27 |
+|14  | 
+|12  | 
+|13  | DHT11 data
+|GND  |
+|5V | DHT11
+
+
+</td><td>
+
+| pin  | description
+| --- | --- 
+|23 |
+|SCL| I2C
+|TX|
+|RX |
+|SDA | I2C
+|19 |
+|18 |
+|5 |
+|17| 
+|16 |
+|4 |
+|2| 
+|15 |
+|GND | GROUND
+|3.3V| BH1750, BMP180
+
+
+</td></tr> </table>
 
 ### Raspberry Server
 1. Let's start with a basic installation of Raspbarry with Ubuntu (which we don't cover in this guide, you can easily do it on the web)
@@ -107,54 +158,7 @@ In addition, we can implement the storage of the data using a database. In this 
 ## Source code organization
 
 
-## Pinout
 
-<table>
-<tr><th colspan=2> ESP32 </th></tr>
-<tr><th>Pin left </th><th>Pin right</th></tr>
-<tr><td>
-
-| pin  | description
-| --- | --- 
-|EN | 
-|VP  |
-|VN  |
-|34  |
-|35  |
-|32  | 
-|33  |
-|25  |
-|26  |
-|27 |
-|14  | 
-|12  | 
-|13  | DHT11 data
-|GND  |
-|5V | DHT11
-
-
-</td><td>
-
-| pin  | description
-| --- | --- 
-|23 |
-|SCL| I2C
-|TX|
-|RX |
-|SDA | I2C
-|19 |
-|18 |
-|5 |
-|17| 
-|16 |
-|4 |
-|2| 
-|15 |
-|GND | GROUND
-|3.3V| BH1750, BMP180
-
-
-</td></tr> </table>
 
 ## Team members
 
