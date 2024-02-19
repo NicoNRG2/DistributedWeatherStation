@@ -14,7 +14,9 @@
     - [ESP32 Station](#ESP32-Station)
     - [Pinout](#Pinout)
     - [Raspberry Server](#Raspberry-Server)
+- [User Guide](#user-guide)
 - [Next Feature](#Next-Feature)
+- [Group Member](#team-members)
 
 ## Project Description
 
@@ -149,11 +151,11 @@ The site is accessible at the following link:
 ```
 http://mioserverino.homepc.it:3000
 ```
-**"index.html"**
+### index.html
 
 A first page will appear containing a geographical map with the available weather stations.
 
-**"marostica_station.html"**
+### marostica_station.html
 
 By clicking on one of these, the current weather data for this location updated in the last hour will appear. Using the menu it is also possible to move to the graph section that shows the trend of the data measured in the last 24 hours.
 
@@ -163,11 +165,6 @@ This project is easily scalable, in the future we can add:
 - stations: in order to cover a larger geographic area, we can add new weather stations.
 
 In addition, we can implement the storage of the data using a database. In this way we can build graphic with a larger number of data instead of the last 24 hours only.
-
-## Source code organization
-
-
-
 
 ## Team members
 
