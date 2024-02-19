@@ -24,7 +24,7 @@ This project is a distributed weather station built using three ESP32 boards equ
 
 [**Presentation Link**](https://docs.google.com/presentation/d/16gfYpvotDNyVWPRAXfWDlK4m0twHXV2He22jJudYA-Q/edit?usp=sharing)
 
-[**Video Link**](mettere Link Giusto)
+[**Video Link**](https://youtu.be/8mtt4AqA1Wc?si=LxrClYKufGykfD_K)
 
 ## Features
 - **Distributed Sensing**: Utilizes three ESP32 boards for distributed data collection.
@@ -33,6 +33,7 @@ This project is a distributed weather station built using three ESP32 boards equ
 - **Web Interface**: Real-time data and daily trends can be viewed through the web interface.
 - **Wireless communication**: with the web server via ESP32.
 - **Low power consumption**.
+
 ## Requirements
 ### Required Hardware
 
@@ -53,6 +54,7 @@ This project is a distributed weather station built using three ESP32 boards equ
 
 ### ESP32 Station
 1. Connect the sensors to the ESP32 according to the electrical diagram.
+![Station Image](/images/circuitScheme.jpeg)
 2. Upload the source code to the ESP32 using the Arduino IDE.
 3. Configure the WiFi settings in the source code and change if needed the address of the web server.
 4. Start the weather station and verify that the data is correctly sent to the web server with the serial monitor inside Arduino IDE.
