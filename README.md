@@ -4,6 +4,7 @@
 
 ## Section links
 - [Project Description](#Project-Description)
+- [Link](#Link)
 - [Features](#Features)
 - [Requirements](#Requirements)
     - [Required Hardware](#Required-Hardware)
@@ -15,15 +16,13 @@
     - [Raspberry Server](#Raspberry-Server)
 - [Next Feature](#Next-Feature)
 
-## Presentation link
-- [Link](#https://docs.google.com/presentation/d/16gfYpvotDNyVWPRAXfWDlK4m0twHXV2He22jJudYA-Q/edit?usp=sharing)
-
-## Video link
-... dajeeee ...
-
 ## Project Description
 
 This project is a distributed weather station built using three ESP32 boards equipped with various sensors to measure environmental temperature, humidity, pressure, and light intensity. The collected data is sent every hour to a Node.js web server hosted on a Raspberry Pi and displayed across web pages.
+
+## Link
+**[Presentation Link]**(https://docs.google.com/presentation/d/16gfYpvotDNyVWPRAXfWDlK4m0twHXV2He22jJudYA-Q/edit?usp=sharing)
+**[Video Link]**(https://docs.google.com/presentation/d/16gfYpvotDNyVWPRAXfWDlK4m0twHXV2He22jJudYA-Q/edit?usp=sharing)
 
 ## Features
 - **Distributed Sensing**: Utilizes three ESP32 boards for distributed data collection.
