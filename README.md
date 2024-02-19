@@ -1,4 +1,4 @@
-# DistributedWeatherStation
+# Distributed Weather Station
 | ![Station Image](/images/StationImage.jpg) | ![Station Image](/images/screenSito.png) |
 |:---:|:---:|
 
@@ -24,7 +24,7 @@ This project is a distributed weather station built using three ESP32 boards equ
 
 [**Presentation Link**](https://docs.google.com/presentation/d/16gfYpvotDNyVWPRAXfWDlK4m0twHXV2He22jJudYA-Q/edit?usp=sharing)
 
-[**Video Link**](link video)
+[**Video Link**](mettere Link Giusto)
 
 ## Features
 - **Distributed Sensing**: Utilizes three ESP32 boards for distributed data collection.
