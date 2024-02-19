@@ -1,5 +1,5 @@
 # Distributed Weather Station
-| ![Station Image](/images/StationImage.jpg) | ![Station Image](/images/screenSito.png) |
+| ![Station Image](/images/StationImage.jpg) | ![Station Image](/images/website.png) |
 |:---:|:---:|
 
 ## Section links
