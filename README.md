@@ -6,6 +6,7 @@
 - [Project Description](#Project-Description)
 - [Link](#Link)
 - [Features](#Features)
+- [Project Layout](#Project-Layout)
 - [Requirements](#Requirements)
     - [Required Hardware](#Required-Hardware)
     - [Required Software](#Required-Software)
@@ -35,6 +36,21 @@ This project is a distributed weather station built using three ESP32 boards equ
 - **Web Interface**: Real-time data and daily trends can be viewed through the web interface.
 - **Wireless communication**: with the web server via ESP32.
 - **Low power consumption**.
+
+## Project Layout
+![Project Layout](/images/softwareArchitecture.jpeg)
+
+
+
+**Initialization:** In the setup() function, the code initializes the serial communication, sensors, and WiFi connection.
+
+**Interrupts and Timers:** The Ticker object timer is used to create an interrupt that triggers the sendData() function every 10 seconds.
+
+**Data Collection:** In the sendData() function, the code collects data from each sensor. If there’s an error in reading the data (indicated by isnan()), it assigns a default value of -2.
+
+**Data Transmission:** If the WiFi connection is active, the code creates an HTTP client, specifies the server URL, and sets the content type to JSON. It then constructs a JSON string with the sensor data and location of the weather station, and sends this data to the server using a POST request. The server’s response is printed to the serial monitor.
+
+
 
 ## Requirements
 ### Required Hardware
@@ -161,7 +177,7 @@ By clicking on one of these, the current weather data for this location updated 
 
 ## Next Feature
 This project is easily scalable, in the future we can add:
-- sensors: to make measurement of other type of data, such ad the wind sensor, the rain sensor,...
+- sensors: to make measurement of other type of data, such as the wind sensor, the rain sensor, ...
 - stations: in order to cover a larger geographic area, we can add new weather stations.
 
 In addition, we can implement the storage of the data using a database. In this way we can build graphic with a larger number of data instead of the last 24 hours only.
