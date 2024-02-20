@@ -1,3 +1,4 @@
+<!-- for the code explanation and comment see marostica_station.html  : structure, functions, features are the same -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
     <title>Weather Station Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js">
     <style>
-        /* Il tuo codice CSS qui */
+        /*CSS code*/
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -62,29 +63,29 @@
 </head>
 <body>
 
-<!-- Menu di navigazione -->
+<!-- Menu -->
 <nav>
     <ul>
-        <li><a href="http://mioserverino.homepc.it:3000">Torna alla Mappa</a></li>
+        <li><a href="http://mioserverino.homepc.it:3000">Back to Map</a></li>
         <li><a href="#" onclick="showPage('pageHome')">Home</a></li>
-        <li><a href="#" onclick="showPage('pageCharts')">Grafici</a></li>
+        <li><a href="#" onclick="showPage('pageCharts')">Charts</a></li>
     </ul>
 </nav>
 
-<!-- PAGINA 1: Dati stazione Marostica (Home) -->
+<!--  (Home) -->
 <div id="pageHome">
-    <h2>Stazione Meteorologica di Enego</h2>
+    <h2>Enego Weather Station</h2>
 
-    <p>Temperatura: <span id="temperatura"></span> °C</p>
-    <p>Umidità: <span id="umidita"></span> %</p>
-    <p>Pressione: <span id="pressione"></span> hPa</p>
-    <p>Altitudine: <span id="altezza"></span> m</p>
-    <p>Luminosità: <span id="luce"></span> lx</p>
+    <p>Temperature: <span id="temperatura"></span> °C</p>
+    <p>Humidity: <span id="umidita"></span> %</p>
+    <p>Pressure: <span id="pressione"></span> mb</p>
+    <p>Altitude: <span id="altezza"></span> m</p>
+    <p>Luminosity: <span id="luce"></span> lx</p>
 </div>
 
-<!-- PAGINA 2: Altra pagina con tutti i grafici -->
+<!-- (Charts)-->
 <div id="pageCharts" hidden>
-    <h2>Ultime 24 ore</h2>
+    <h2>Last 24 Hours</h2>
 
     <canvas id="temperaturaChart"></canvas>
     <canvas id="umiditaChart"></canvas>
@@ -120,7 +121,7 @@
                         display: true,
                         title: {
                             display: true,
-                            text: 'Orario'
+                            text: 'Hours'
                         }
                     },
                     y: {
@@ -179,22 +180,19 @@
         chart.update();
     };
 
-    var temperaturaChart = createChart('temperaturaChart', 'Temperatura', arrayTemperatura, 'red', '°C');
-    var umiditaChart = createChart('umiditaChart', 'Umidità', arrayUmidita, 'blue', '%');
-    var pressioneChart = createChart('pressioneChart', 'Pressione', arrayPressione, 'green', 'hPa');
-    var altezzaChart = createChart('altezzaChart', 'Altezza', arrayAltezza, 'purple', 'm');
-    var luceChart = createChart('luceChart', 'Luce', arrayLuce, 'orange', 'lx');
+    var temperaturaChart = createChart('temperaturaChart', 'Temperature', arrayTemperatura, 'red', '°C');
+    var umiditaChart = createChart('umiditaChart', 'Humidity', arrayUmidita, 'blue', '%');
+    var pressioneChart = createChart('pressioneChart', 'Pressure', arrayPressione, 'green', 'hPa');
+    var altezzaChart = createChart('altezzaChart', 'Altitude', arrayAltezza, 'purple', 'm');
+    var luceChart = createChart('luceChart', 'Luminosity', arrayLuce, 'orange', 'lx');
 
-    // Funzione per passare alla pagina desiderata
     function showPage(pageId) {
         document.getElementById('pageHome').hidden = true;
         document.getElementById('pageCharts').hidden = true;
 
-        // Mostra la pagina corrispondente
         document.getElementById(pageId).hidden = false;
     }
 
-    // Esempio di come chiamare la funzione per mostrare la home al caricamento della pagina
     showPage('pageHome');
 </script>
 

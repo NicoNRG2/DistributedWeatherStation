@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Distributed Weather Station</title>
 
-    <!-- Includi la libreria Leaflet -->
+    <!--include Leaflet library -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
+    <!-- CSS code -->
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -23,7 +24,7 @@
             
         }
 
-        /* Stile per il titolo della pagina */
+       
         h1 {
             text-align: center;
             padding: 20px;
@@ -32,7 +33,7 @@
             margin: 0;
         }
 
-        /* Stile per il contenitore della mappa */
+       
         #mappa {
             margin: auto;
             border: 2px solid #ccc;
@@ -43,27 +44,27 @@
 </head>
 <body>
 
-    <!-- Titolo della pagina -->
-    <h1>Stazioni Meteo Disponibili: </h1>
 
-    <!-- Contenitore per la mappa -->
+    <h1>Available Weather Stations: </h1>
+
+
     <div id="mappa"></div>
 
-    <!-- Codice JavaScript per la mappa -->
+    <!--  JavaScript code for the map per la mappa -->
     <script>
-        // Inizializza la mappa centrata sul Veneto
+        // map centered in veneto
         var map = L.map('mappa').setView([45.6797, 11.8668], 9);
 
-        // Aggiungi uno stile di mappa base
+        // style
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
-        // Aggiungi marcatori per Marostica ed Enego
+        //  Marostica and Enego marker
         var marosticaMarker = L.marker([45.7443, 11.6452]).addTo(map);
         var enegoMarker = L.marker([45.9532, 11.6417]).addTo(map);
 
-        // Aggiungi pop-up con link alle pagine specifiche
+        // pop-up with link to the specific page
         marosticaMarker.bindPopup('<a href="marostica_station.html">Marostica</a>');
         enegoMarker.bindPopup('<a href="enego_station.html">Enego</a>');
     </script>

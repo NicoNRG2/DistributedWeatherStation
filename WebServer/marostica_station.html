@@ -6,7 +6,7 @@
     <title>Weather Station Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js">
     <style>
-        /* Il tuo codice CSS qui */
+        /* CSS code*/
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -62,31 +62,31 @@
 </head>
 <body>
 
-<!-- Menu di navigazione -->
+<!-- Menu -->
 <nav>
     <ul>
-        <li><a href="http://mioserverino.homepc.it:3000">Torna alla Mappa</a></li>
+        <li><a href="http://mioserverino.homepc.it:3000">Back to Map</a></li>
         <li><a href="#" onclick="showPage('pageHome')">Home</a></li>
-        <li><a href="#" onclick="showPage('pageCharts')">Grafici</a></li>
+        <li><a href="#" onclick="showPage('pageCharts')">Charts</a></li>
     </ul>
 </nav>
 
-<!-- PAGINA 1: Dati stazione Marostica (Home) -->
+<!--  (Home) -->
 <div id="pageHome">
-    <h2>Stazione Meteorologica di Marostica</h2>
+    <h2>Marostica Weather Station</h2>
 
-    <p>Temperatura: <span id="temperatura"></span> °C</p>
-    <p>Umidità: <span id="umidita"></span> %</p>
-    <p>Pressione: <span id="pressione"></span> hPa</p>
-    <p>Altitudine: <span id="altezza"></span> m</p>
-    <p>Luminosità: <span id="luce"></span> lx</p>
+    <p>Temperature: <span id="temperatura"></span> °C</p>
+    <p>Humidity: <span id="umidita"></span> %</p>
+    <p>Pressure: <span id="pressione"></span> mb</p>
+    <p>Altitude: <span id="altezza"></span> m</p>
+    <p>Luminosity: <span id="luce"></span> lx</p>
 </div>
 
-<!-- PAGINA 2: Altra pagina con tutti i grafici -->
+<!-- (Charts)-->
 <div id="pageCharts" hidden>
-    <h2>Ultime 24 ore</h2>
+    <h2>Last 24 Hours</h2>
 
-    <canvas id="temperaturaChart"></canvas>
+    <canvas id="temperaturaChart"></canvas> <!-- html id used in the function to create charts-->
     <canvas id="umiditaChart"></canvas>
     <canvas id="pressioneChart"></canvas>
     <canvas id="altezzaChart"></canvas>
@@ -95,12 +95,15 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    var arrayTemperatura = new Array(24).fill(null);
+    var arrayTemperatura = new Array(24).fill(null); //array to store data
     var arrayUmidita = new Array(24).fill(null);
     var arrayPressione = new Array(24).fill(null);
     var arrayAltezza = new Array(24).fill(null);
     var arrayLuce = new Array(24).fill(null);
 
+
+            //function(html id, string, data array, color, unit of measure)
+            //this function creates the charts using Chart.js library
     var createChart = function (ctxId, label, data, color, um) {
         var ctx = document.getElementById(ctxId).getContext('2d');
         return new Chart(ctx, {
@@ -120,7 +123,7 @@
                         display: true,
                         title: {
                             display: true,
-                            text: 'Orario'
+                            text: 'Hours'
                         }
                     },
                     y: {
@@ -135,7 +138,7 @@
         });
     };
 
-    var roundToNearestHour = function (hour) {
+    var roundToNearestHour = function (hour) { //make the actual hour shown as the last value in the x axis
         var oraAttuale = new Date();
         oraAttuale.setHours(oraAttuale.getHours() - hour);
         oraAttuale.setMinutes(0);
@@ -143,30 +146,30 @@
         return oraAttuale.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     };
 
-    var socket = new WebSocket('ws://mioserverino.homepc.it:3000');
+    var socket = new WebSocket('ws://mioserverino.homepc.it:3000'); //socket 
 
-    socket.onmessage = function (event) {
-        var json = JSON.parse(event.data);
-        if (json.luogo === "Marostica") {
-            arrayTemperatura.shift();
-            arrayUmidita.shift();
+    socket.onmessage = function (event) {   //new data arrived
+        var json = JSON.parse(event.data);  //json creation
+        if (json.luogo === "Marostica") {   //data of the Marostica station
+            arrayTemperatura.shift();       //delete the oldest data. NB: we are using a fixed length array so we can store only the last 24 values
+            arrayUmidita.shift();   
             arrayPressione.shift();
             arrayAltezza.shift();
             arrayLuce.shift();
 
-            arrayTemperatura.push(json.temperatura);
+            arrayTemperatura.push(json.temperatura); //add the new data in the array
             arrayUmidita.push(json.umidita);
             arrayPressione.push(json.pressione);
             arrayAltezza.push(json.altezza);
             arrayLuce.push(json.luce);
 
-            updateChart(temperaturaChart, arrayTemperatura);
+            updateChart(temperaturaChart, arrayTemperatura); //update the charts
             updateChart(umiditaChart, arrayUmidita);
             updateChart(pressioneChart, arrayPressione);
             updateChart(altezzaChart, arrayAltezza);
             updateChart(luceChart, arrayLuce);
 
-            document.getElementById("temperatura").innerHTML = json.temperatura;
+            document.getElementById("temperatura").innerHTML = json.temperatura; //update the data shown in the home section
             document.getElementById("umidita").innerHTML = json.umidita;
             document.getElementById("pressione").innerHTML = json.pressione;
             document.getElementById("altezza").innerHTML = json.altezza;
@@ -174,27 +177,26 @@
         }
     };
 
-    var updateChart = function (chart, data) {
+    var updateChart = function (chart, data) { //function to update the charts, to use when the array is update with new data
         chart.data.datasets[0].data = data;
         chart.update();
     };
 
-    var temperaturaChart = createChart('temperaturaChart', 'Temperatura', arrayTemperatura, 'red', '°C');
-    var umiditaChart = createChart('umiditaChart', 'Umidità', arrayUmidita, 'blue', '%');
-    var pressioneChart = createChart('pressioneChart', 'Pressione', arrayPressione, 'green', 'hPa');
-    var altezzaChart = createChart('altezzaChart', 'Altezza', arrayAltezza, 'purple', 'm');
-    var luceChart = createChart('luceChart', 'Luce', arrayLuce, 'orange', 'lx');
+    var temperaturaChart = createChart('temperaturaChart', 'Temperature', arrayTemperatura, 'red', '°C'); //create the charts
+    var umiditaChart = createChart('umiditaChart', 'Humidity', arrayUmidita, 'blue', '%');
+    var pressioneChart = createChart('pressioneChart', 'Pressure', arrayPressione, 'green', 'hPa');
+    var altezzaChart = createChart('altezzaChart', 'Altitude', arrayAltezza, 'purple', 'm');
+    var luceChart = createChart('luceChart', 'Luminosity', arrayLuce, 'orange', 'lx');
 
-    // Funzione per passare alla pagina desiderata
+    //show the selected page (used when clicking in a section of the menu)
     function showPage(pageId) {
         document.getElementById('pageHome').hidden = true;
         document.getElementById('pageCharts').hidden = true;
 
-        // Mostra la pagina corrispondente
         document.getElementById(pageId).hidden = false;
     }
 
-    // Esempio di come chiamare la funzione per mostrare la home al caricamento della pagina
+    // default: pageHome
     showPage('pageHome');
 </script>
 
