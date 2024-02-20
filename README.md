@@ -39,8 +39,48 @@ This project is a distributed weather station built using three ESP32 boards equ
 
 ## Project Layout
 ![Project Layout](/images/SoftwareArchitecture.png)
+```
+DistributedWeatherStation
+|   Power Point Presentation.pptx
+|   README.md
+|
++---Boards and Sensors Docs
+|       DHT11_Temp Humid.pdf
+|       dhtxx_protocol.png
+|       dht_data_format.png
+|       ESP32-Pinout.webp
+|       GY-302_Licht_Sensor_Modul_Datenblatt_AZ-Delivery_Vertriebs_GmbH.pdf
+|       GY-68_BMP180_Barometrischer_Sensor_Luftdruck_Modul_fur_Arduino_und_Raspberry_Pi_Datenblatt.pdf
+|       MSP-EXP432P401R.jpg
+|       MSP432_DriverLib_Users_Guide-MSP432P4xx-4_40_00_03 (1).pdf
+|
++---ESP32_Firmware
+|       ESP32_Firmware.ino
+|
++---images
+|       circuitScheme.jpeg
+|       RaspDirectoryServer.jpeg
+|       SoftwareArchitecture.png
+|       StationImage.jpg
+|       website.png
+|
++---Sensor testing
+|   +---ESP32_BH1750_test
+|   |       ESP32_BH1750_test.ino
+|   |
+|   +---ESP32_BMP180_test
+|   |       ESP32_BMP180_test.ino
+|   |
+|   \---ESP32_DHT11_test
+|           ESP32_DHT11_test.ino
+|
+\---WebServer
+        enego_station.html
+        index.html
+        marostica_station.html
+        webserver.js
 
-
+```
 
 **Initialization:** In the setup() function, the code initializes the serial communication, sensors, and WiFi connection.
 
