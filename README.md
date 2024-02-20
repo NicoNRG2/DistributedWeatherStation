@@ -58,7 +58,7 @@ DistributedWeatherStation
 |       ESP32_Firmware.ino
 |
 +---images
-|       circuitScheme.jpeg
+|       circuitScheme.png
 |       RaspDirectoryServer.jpeg
 |       SoftwareArchitecture.png
 |       StationImage.jpg
@@ -112,7 +112,7 @@ DistributedWeatherStation
 
 ### ESP32 Station
 1. Connect the sensors to the ESP32 according to the electrical diagram.
-![Station Image](/images/circuitScheme.jpeg)
+![Station Image](/images/circuitScheme.png)
 2. Upload the source code to the ESP32 using the Arduino IDE.
 3. Configure the WiFi settings in the source code and change if needed the address of the web server.
 4. Start the weather station and verify that the data is correctly sent to the web server with the serial monitor inside Arduino IDE.
