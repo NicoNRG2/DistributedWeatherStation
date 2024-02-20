@@ -229,4 +229,4 @@ However, we can highlight the areas of greatest competence for each member:
 
 - Brognara Alessandro (sensor testing with arduino IDE)
 - Cappellaro Nicola (interconnection between ESP32 and Raspberry, ESP32 coding)
-- Zannoni Riccardo (website and javascript coding)
+- Zannoni Riccardo (website and javascript coding) 
