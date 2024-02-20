@@ -38,7 +38,7 @@ This project is a distributed weather station built using three ESP32 boards equ
 - **Low power consumption**.
 
 ## Project Layout
-![Project Layout](/images/SoftwareArchitecture.jpeg)
+![Project Layout](/images/SoftwareArchitecture.png)
 
 
 
